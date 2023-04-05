@@ -3,7 +3,7 @@
 <p align="center">
 <img src="https://aleen42.github.io/badges/src/javascript.svg" alt="js"/>
 <img src="https://aleen42.github.io/badges/src/visual_studio_code.svg" alt="vsc"/>
-<img src="https://aleen42.github.io/badges" alt="vsc"/>
+<img src="https://aleen42.github.io/badges/src/vue.svg" alt="vsc"/>
 </p>
 
 > **[내용]**<br/>
