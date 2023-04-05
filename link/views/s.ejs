@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>디스코드 서버 입장</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1aaa3662c7.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script async src='/cdn-cgi/challenge-platform/h/b/scripts/invisible.js'></script>
+</head>
+
+<body>
+    <div class="loading">
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            cursor: pointer;
+            width: 32em;
+            margin: auto;
+            top: 100;
+            background-color: #5865F2;
+            display: block;
+            max-width: 100%;
+        }
+
+
+        .button1 {
+            border-radius: 2px;
+        }
+
+        .button2 {
+            border-radius: 4px;
+        }
+
+        .button3 {
+            border-radius: 8px;
+        }
+
+        .button4 {
+            border-radius: 12px;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+    <style>
+        body {
+            background-color: #2c2f33 !important;
+        }
+
+        .spinner {
+            margin: 100px auto;
+            width: 40px;
+            height: 40px;
+            position: relative;
+        }
+
+        .cube1,
+        .cube2 {
+            background-color: #5865F2;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+            animation: sk-cubemove 1.8s infinite ease-in-out;
+        }
+
+        .cube2 {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+
+        @-webkit-keyframes sk-cubemove {
+            25% {
+                -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+            }
+
+            50% {
+                -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+            }
+
+            75% {
+                -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+            }
+
+            100% {
+                -webkit-transform: rotate(-360deg)
+            }
+        }
+
+        @keyframes sk-cubemove {
+            25% {
+                transform: translateX(42px) rotate(-90deg) scale(0.5);
+                -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+            }
+
+            50% {
+                transform: translateX(42px) translateY(42px) rotate(-179deg);
+                -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+            }
+
+            50.1% {
+                transform: translateX(42px) translateY(42px) rotate(-180deg);
+                -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+            }
+
+            75% {
+                transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+                -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+                -webkit-transform: rotate(-360deg);
+            }
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border-radius: 70%;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin: auto;
+            border: none;
+            padding: 1.25em;
+            box-sizing: border-box;
+            width: 32em;
+            background-color: rgba(0, 0, 0, 0.842);
+            display: flex;
+            border-radius: 5px;
+            flex-direction: column;
+            max-width: 100%;
+            position: relative;
+            justify-content: center;
+            font-family: inherit;
+            font-weight: 1000px;
+            line-height: 1.5;
+            display: flex;
+            font-size: small;
+            color: white;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            font-size: large;
+        }
+
+        padding {
+            background-color: #000000;
+        }
+    </style>
+    </head>
+
+    <body style="background-color:rgb(26, 24, 24);">
+        <script style="background-color:rgb(26, 24, 24);">
+            Swal.fire({
+                html: `<div style="margin-bottom :10px;"></div>
+                                <div class="box" style="background: #BDBDBD; margin-bottom :10px"><img class="profile" src="<%= guild_icon %>"></div>
+                                <h2><%= guild_name %></h2>
+                                </i><br>
+
+                                <div><button class="btn btn-primary btn-lg btn-block join_button" style="background-color: #5865F2; width: 100%;" data-callback='join_guild' onclick="myFunction()";">서버 참가하기</a></div>`,
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                allowEnterKey: false
+            })
+
+            function myFunction() {
+                location.replace("https://discord.com/api/oauth2/authorize?client_id=<%= client_id %>&redirect_uri=<%= url %>%2Fjoin&response_type=code&scope=identify%20guilds.join&state=<%= guild_id %>")
+            }
+        </script>
+    </body>
+
+</html>
